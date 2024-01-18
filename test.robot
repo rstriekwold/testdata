@@ -17,7 +17,6 @@ Testcase 01
     Log To Console    ${rows}
     @{export}=        Export table             ${rows}
 
-    ${items} =        Get Dictionary items     @{export}
     @{keys} =         Get Dictionary keys      @{export}
     @{values} =       Get Dictionary values    @{export}
     
@@ -26,18 +25,21 @@ Testcase 01
         log to console                         ${key}
  
         Set Suite Variable                     ${${key}}             ${values}[${counter}]
+
+        ${counter}                  evaluate                     ${counter}+1   
+    END
         Log To console              Testcasename: ${testcasename} 
         Log To console              Lastname: ${lastname} 
         Log To console              Firstname: ${firstname} 
         Log To console              Company: ${company} 
         Log To console              Email: ${email} 
-        ${counter}                  evaluate                     ${counter}+1   
-    END
 
 test cases 2
-    log to console    ${test1}
-    log to console    ${test2}
-
+        Log To console              Testcasename: ${testcasename} 
+        Log To console              Lastname: ${lastname} 
+        Log To console              Firstname: ${firstname} 
+        Log To console              Company: ${company} 
+        Log To console              Email: ${email} 
 
 
 
