@@ -13,20 +13,29 @@ Exercise 14 - Data Driven Testing - Create Lead using Suite Test Template with $
     Open workbook     test.xlsx
     ${worksheet}=     Read worksheet           header=${TRUE}
     ${table}=         Create table             ${worksheet}
-    ${rows} =         Find table rows          ${table}              test1      ==    ${1}
+    ${rows} =         Find table rows          ${table}              test1        ==    ${1}
     Log To Console    ${rows}
     @{export}=        Export table             ${rows}
+
     ${items} =        Get Dictionary items     @{export}
-    ${keys} =         Get Dictionary keys      @{export}
-    ${values} =       Get Dictionary values    @{export}
-
-    # FOR             ${i}                     IN                    @{export}
-    #                 Log to console           ${i}
-    # END
-
-    FOR               ${key}                   IN                    @{dict}
-        Log to console                         ${dict}${key}         # value1
+    @{keys} =         Get Dictionary keys      @{export}
+    @{values} =       Get Dictionary values    @{export}
+    
+    ${counter}=       set variable             ${0}
+    FOR               ${key}                   IN                    @{keys}
+        log to console                         ${key}
+ 
+        Set Suite Variable                     ${${key}}             ${values}[${counter}]
+        Log To console              CHECK: ${test1} 
+        Log To console              CHECK: ${test2} 
+        ${counter}                  evaluate                     ${counter}+1   
     END
+
+test cases 2
+    log to console    ${test1}
+    log to console    ${test2}
+
+
 
 
 
