@@ -8,7 +8,7 @@ Library                   Collections
 
 *** Test Cases ***
 Testcase 01
-    Load data line        file=${CURDIR}/testdata.xlsx                            sheet_name=Sheet1    testcaseName=tc01
+    Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc01
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
     Log To console        Firstname: ${firstname}
@@ -16,7 +16,7 @@ Testcase 01
     Log To console        Email: ${email}
 
 test cases 2
-    Load data line        file=${CURDIR}/testdata.xlsx                            sheet_name=Sheet1    testcaseName=tc02
+    Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc02
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
     Log To console        Firstname: ${firstname}
@@ -24,7 +24,7 @@ test cases 2
     Log To console        Email: ${email}
 
 test cases 3
-    Load data line        file=${CURDIR}/testdata.xlsx                            sheet_name=Sheet1    testcaseName=tc03
+    Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc03
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
     Log To console        Firstname: ${firstname}
