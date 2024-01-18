@@ -4,11 +4,7 @@ Library    Process
 Library                   QWeb
 Suite Setup           Run Keywords    install Library    AND    Open Browser                https://google.com       chrome
 Suite Teardown            CloseAllBrowsers
-
 Library                   Collections
-
-
-
 
 *** Test Cases ***
 Testcase 01
