@@ -7,7 +7,7 @@ Suite Teardown            CloseAllBrowsers
 Library                   Collections
 
 *** Test Cases ***
-Testcase 01
+Testcase 1
     Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc01
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
@@ -15,7 +15,7 @@ Testcase 01
     Log To console        Company: ${company}
     Log To console        Email: ${email}
 
-test cases 2
+Testcase 2
     Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc02
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
@@ -23,7 +23,7 @@ test cases 2
     Log To console        Company: ${company}
     Log To console        Email: ${email}
 
-test cases 3
+Testcase 3
     Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc03
     Log To console        Testcasename: ${testcasename}
     Log To console        Lastname: ${lastname}
