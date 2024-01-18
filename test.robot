@@ -38,21 +38,16 @@ test cases 3
 *** Keywords ***
 Load data line
     [Arguments]           ${file}                     ${sheet_name}            ${testcaseName}
-    Open workbook         ${file}
-    ${worksheet}=         Read worksheet              ${sheet_name}            header=${TRUE}
+    Open workbook         ${file}  
+    ${worksheet}=         Read worksheet              ${sheet_name}           header=${TRUE}
     ${table}=             Create table                ${worksheet}
-    ${rows} =             Find table rows             ${table}                 testcasename         ==    ${testcaseName}
+    ${rows} =             Find table rows             ${table}                 testcasename         ==   ${testcaseName}
 
     @{export}=            Export table                ${rows}
+    &{dict}=              Convert To Dictionary                    @{export}
 
-    @{keys} =             Get Dictionary keys         @{export}
-    @{values} =           Get Dictionary values       @{export}
+    FOR    ${key_value_tuple}    IN    &{dict}
 
-    ${counter}=           set variable                ${0}
-    FOR                   ${key}                      IN                       @{keys}
-        log to console    ${key}
+        Set Suite Variable     ${${key_value_tuple}[0]}                          ${key_value_tuple}[1]
         
-        Set Suite Variable                            ${${key}}                ${values}[${counter}]
-
-        ${counter}        evaluate                    ${counter}+1
     END
