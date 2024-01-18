@@ -6,14 +6,14 @@ Library               RPA.Tables
 Library               RPA.Excel.Files
 Library               Collections
 
-# In this exercise we use the same salesforce scenario built with exercise 6 and 12.
+
 
 *** Test Cases ***
-Exercise 14 - Data Driven Testing - Create Lead using Suite Test Template with ${lead_status} ${last_name} ${company} ${first_name} ${salutation}
-    Open workbook     test.xlsx
+Testcase 01
+    Open workbook     testdata.xlsx
     ${worksheet}=     Read worksheet           header=${TRUE}
     ${table}=         Create table             ${worksheet}
-    ${rows} =         Find table rows          ${table}              test1        ==    ${1}
+    ${rows} =         Find table rows          ${table}              testcasename        ==    tc01
     Log To Console    ${rows}
     @{export}=        Export table             ${rows}
 
@@ -26,8 +26,11 @@ Exercise 14 - Data Driven Testing - Create Lead using Suite Test Template with $
         log to console                         ${key}
  
         Set Suite Variable                     ${${key}}             ${values}[${counter}]
-        Log To console              CHECK: ${test1} 
-        Log To console              CHECK: ${test2} 
+        Log To console              Testcasename: ${testcasename} 
+        Log To console              Lastname: ${lastname} 
+        Log To console              Firstname: ${firstname} 
+        Log To console              Company: ${company} 
+        Log To console              Email: ${email} 
         ${counter}                  evaluate                     ${counter}+1   
     END
 
