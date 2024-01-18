@@ -2,7 +2,7 @@
 
 Library                   Process
 Library                   QWeb
-Suite Setup               Run Keywords                Install Library             AND                  Open Browser    https://google.com    chrome
+Suite Setup               Run Keywords                Install Library             AND                  Open Browser    https://copado.com    chrome
 Suite Teardown            CloseAllBrowsers
 Library                   Collections
 
