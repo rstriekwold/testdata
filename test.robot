@@ -4,8 +4,7 @@ Library    Process
 Library                   QWeb
 Suite Setup           Run Keywords    install Library    AND    Open Browser                https://google.com       chrome
 Suite Teardown            CloseAllBrowsers
-Library                   RPA.Tables
-Library                   RPA.Excel.Files
+
 Library                   Collections
 
 
@@ -58,3 +57,5 @@ Load data line
 install Library
     # ${handleAgent}=        Start Process          pip install rpaframework  alias=agent    shell=True
     ${result}=             Run Process  pip install rpaframework   alias=manager    shell=True
+    import Library                   RPA.Tables
+    import Library                   RPA.Excel.Files
