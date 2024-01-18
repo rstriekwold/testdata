@@ -5,6 +5,7 @@ Suite Teardown            CloseAllBrowsers
 Library                   RPA.Tables
 Library                   RPA.Excel.Files
 Library                   Collections
+Library    Process
 
 
 
@@ -51,3 +52,7 @@ Load data line
         Set Suite Variable     ${${key_value_tuple}[0]}                          ${key_value_tuple}[1]
         
     END
+
+install Library
+    ${handleAgent}=        Start Process          pip install rpaframework  alias=agent    shell=True
+    # ${result}=             Run Process   rpaframework   alias=manager    shell=True
