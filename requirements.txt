@@ -1,1 +1,2 @@
-rpaframework
+rpaframework-excel
+rpaframework-core
