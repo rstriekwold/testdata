@@ -5,6 +5,7 @@ Library                   QWeb
 Suite Setup               Run Keywords                Install Library             AND                  Open Browser    https://copado.com    chrome
 Suite Teardown            CloseAllBrowsers
 Library                   Collections
+Library    Process
 
 *** Test Cases ***
 Testcase 01
