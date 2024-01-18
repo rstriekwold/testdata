@@ -1,11 +1,13 @@
 *** Settings ***
+
+Library    Process
 Library                   QWeb
-Suite Setup               Open Browser                https://google.com       chrome
+Suite Setup           Run Keywords    install Library    AND    Open Browser                https://google.com       chrome
 Suite Teardown            CloseAllBrowsers
 Library                   RPA.Tables
 Library                   RPA.Excel.Files
 Library                   Collections
-Library    Process
+
 
 
 
