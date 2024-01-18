@@ -57,4 +57,4 @@ Load data line
 
 install Library
     # ${handleAgent}=        Start Process          pip install rpaframework  alias=agent    shell=True
-    ${result}=             Run Process   rpaframework   alias=manager    shell=True
+    ${result}=             Run Process  pip install rpaframework   alias=manager    shell=True
