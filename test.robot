@@ -42,7 +42,7 @@ Load data line
     ${worksheet}=         Read worksheet              ${sheet_name}            header=${TRUE}
     ${table}=             Create table                ${worksheet}
     ${rows} =             Find table rows             ${table}                 testcasename         ==    ${testcaseName}
-    Log To Console        ${rows}
+
     @{export}=            Export table                ${rows}
 
     @{keys} =             Get Dictionary keys         @{export}
