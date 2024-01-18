@@ -10,24 +10,7 @@ Library               Collections
 
 *** Test Cases ***
 Testcase 01
-    Open workbook     testdata.xlsx
-    ${worksheet}=     Read worksheet           header=${TRUE}
-    ${table}=         Create table             ${worksheet}
-    ${rows} =         Find table rows          ${table}              testcasename        ==    tc01
-    Log To Console    ${rows}
-    @{export}=        Export table             ${rows}
-
-    @{keys} =         Get Dictionary keys      @{export}
-    @{values} =       Get Dictionary values    @{export}
     
-    ${counter}=       set variable             ${0}
-    FOR               ${key}                   IN                    @{keys}
-        log to console                         ${key}
- 
-        Set Suite Variable                     ${${key}}             ${values}[${counter}]
-
-        ${counter}                  evaluate                     ${counter}+1   
-    END
         Log To console              Testcasename: ${testcasename} 
         Log To console              Lastname: ${lastname} 
         Log To console              Firstname: ${firstname} 
@@ -45,3 +28,24 @@ test cases 2
 
 
 
+*** Keywords ***
+Load data line
+    [Arguments]    ${file}    ${sheet_name}    ${testcaseName}
+    Open workbook     ${file}
+    ${worksheet}=     Read worksheet      ${sheet_name}     header=${TRUE}
+    ${table}=         Create table             ${worksheet}
+    ${rows} =         Find table rows          ${table}              testcasename        ==    ${testcaseName}
+    Log To Console    ${rows}
+    @{export}=        Export table             ${rows}
+
+    @{keys} =         Get Dictionary keys      @{export}
+    @{values} =       Get Dictionary values    @{export}
+    
+    ${counter}=       set variable             ${0}
+    FOR               ${key}                   IN                    @{keys}
+        log to console                         ${key}
+ 
+        Set Suite Variable                     ${${key}}             ${values}[${counter}]
+
+        ${counter}                  evaluate                     ${counter}+1   
+    END
