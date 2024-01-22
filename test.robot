@@ -10,7 +10,7 @@ Library                   Collections
 *** Test Cases ***
 Testcase 01
     Load data line        file=${CURDIR}/testdata1.xlsx                            sheet_name=Sheet1    testcaseName=tc01
-    Log To console        Testcasename: ${testcasename}
+    Log To console        Testcasename          : ${testcasename}
     Log To console        Lastname: ${lastname}
     Log To console        Firstname: ${firstname}
     Log To console        Company: ${company}
